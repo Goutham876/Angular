@@ -7,13 +7,17 @@ import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
+import { FavoriteComponent } from './favorite/favorite.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CoursesComponent,
-    SummaryPipe
+    SummaryPipe,
+    FavoriteComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,

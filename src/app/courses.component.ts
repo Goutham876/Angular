@@ -10,4 +10,4 @@ import { CoursesService } from './courses.service';
 
 export class CoursesComponent {
     text = "It if sometimes furnished unwilling as additions so. Blessing resolved peculiar fat graceful ham. Sussex on at really ladies in as elinor. Sir sex opinions age properly extended. Advice branch vanity or do thirty living. Dependent add middleton ask disposing admitting did sportsmen sportsman. ";
-} 
+}
