@@ -20,7 +20,7 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
     FavoriteComponent,
     ContactFormComponent,
     SignupFormComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     FormsModule,
