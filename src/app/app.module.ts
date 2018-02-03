@@ -28,7 +28,7 @@ import { PostsComponent } from './posts/posts.component';
     NewCourseFormComponent,
     ChangePasswordComponent,
     NewPasswordComponent,
-    PostsComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
@@ -37,8 +37,8 @@ import { PostsComponent } from './posts/posts.component';
     HttpModule
   ],
   providers: [
-    PostService,
-    CoursesService
+    CoursesService,
+    PostService
   ],
   bootstrap: [AppComponent]
 })
