@@ -1,3 +1,4 @@
+import { BadInput } from './../common/bad-input';
 import { AppError } from './../common/app-error';
 import { PostService } from './../services/post.service';
 import { Component, OnInit } from '@angular/core';
@@ -21,10 +22,6 @@ export class PostsComponent implements OnInit{
       .subscribe(
         response => {
           this.posts = response.json(); 
-        }, 
-        error => {
-          alert('An unexpected error occured.');
-          console.log(error);
         });
   }
 
@@ -37,12 +34,11 @@ export class PostsComponent implements OnInit{
         post['id'] = response.json().id;
         this.posts.splice(0, 0, post);
       },
-      (error : Response) => {
-        if(error.status === 400) {
+      (error : AppError) => {
+        if(error instanceof BadInput) {
           // this.form.setErrors(error.json())  
         } else {
-          alert('An unexpected error occured.');
-          console.log(error);
+          throw error;
         }
       });
   }
@@ -52,10 +48,6 @@ export class PostsComponent implements OnInit{
     .subscribe(
       response => {
         console.log(response.json());
-    },
-      error => {
-        alert('An unexpected error occured.');
-        console.log(error);
     });
   }
 
@@ -70,8 +62,7 @@ export class PostsComponent implements OnInit{
         if(error instanceof NotFoundError)
             alert("this post has already been deleated!")
           else {
-            alert('An unexpected error occured.');
-            console.log(error); 
+            throw error;
           }
     });
   }
